@@ -1,5 +1,6 @@
 import {useState } from "react";
 import StudentList from "./components/StudentList";
+import ptitLogo from './assets/image.png';
 const initialStudent = [
   {
     id: "B25001",
@@ -80,6 +81,11 @@ const avgScore = totalStudents > 0
 
 return (
     <div style={{ padding: '20px', fontFamily: 'Arial' }}>
+      <img 
+      src={ptitLogo} 
+      alt="PTIT Logo" 
+      style={{ height: '60px', width: 'auto', objectFit: 'contain' }} 
+      />
       <h2>Quản lý Điểm Sinh viên</h2>
 
       <form onSubmit={handleAddStudent} style={{ marginBottom: '20px' }}>
