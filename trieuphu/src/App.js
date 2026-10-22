@@ -9,6 +9,7 @@ import NotFound from './pages/NotFound';
 import Play from './pages/Play';
 import Home from './pages/Home';
 import Result from './pages/Result';
+import History from './pages/History';
 
 const App = () => {
   const [questions, setQuestions] = useState([]);
@@ -50,6 +51,7 @@ const App = () => {
         <Route index element={<Home playerName={playerName} setPlayerName={setPlayerName} history={history} />} />
         <Route path="play" element={<Play questions={questions} playerName={playerName} setHistory={setHistory} />} />
         <Route path="result" element={<Result />} />
+        <Route path="history" element={<History history={history} setHistory={setHistory} />} />
         <Route path="questions" element={<QuestionBank questions={questions} />} />
         <Route path="questions/:id" element={<QuestionDetail questions={questions} />} />
         <Route path="*" element={<NotFound />} />
