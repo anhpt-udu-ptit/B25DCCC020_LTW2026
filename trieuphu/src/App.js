@@ -6,6 +6,9 @@ import Layout from './components/Layout';
 import QuestionBank from './pages/QuestionBank';
 import QuestionDetail from './pages/QuestionDetail';
 import NotFound from './pages/NotFound';
+import Play from './pages/Play';
+import Home from './pages/Home';
+import Result from './pages/Result';
 
 const App = () => {
   const [questions, setQuestions] = useState([]);
@@ -44,6 +47,9 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route index element={<Home playerName={playerName} setPlayerName={setPlayerName} history={history} />} />
+        <Route path="play" element={<Play questions={questions} playerName={playerName} setHistory={setHistory} />} />
+        <Route path="result" element={<Result />} />
         <Route path="questions" element={<QuestionBank questions={questions} />} />
         <Route path="questions/:id" element={<QuestionDetail questions={questions} />} />
         <Route path="*" element={<NotFound />} />
